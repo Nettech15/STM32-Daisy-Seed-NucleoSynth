@@ -1,0 +1,40 @@
+Editable Parameters:
+
+Select Program Change 1 thru 28, then adjust the parameters value by moving the 
+Data Slider (Volume = CC#7).
+
+ (1): // Default (no parameter selected)
+ (2): // Modulation
+ (3): // Tuning
+ (4): // Waveform Select
+ (5): // Oscillator Mix
+ (6): // Oscillator #2 De-Tune
+ (7): // Oscillator #2 Scale
+ (8): // Resonance
+ (9): // Pulse Width Value
+ (10): // VCF Attack
+ (11): // VCF Decay
+ (12): // VCF Sustain
+ (13): // VCF Release
+ (14): // VCA Attack
+ (15): // VCA Decay
+ (16): // VCA Sustain
+ (17): // VCA Release
+ (18): // VCF Key Follow level
+ (19): // ENV Key Follow level
+ (20): // Velocity Routing Select
+ (21): // VCF Envelope level
+ (22): // Mod Wheel LFO rate
+ (23): // PWM LFO rate
+ (24): // PWM2 LFO rate
+ (25): // VCF LFO rate
+ (26): // VCF LFO Mod level
+ (27): // PWM LFO Mod level
+ (28): // PWM2 LFO Mod level
+
+Select Program Change 32 thru 35 to change the Sequencer's mode.
+
+ (32): // Sequencer Record
+ (33): // Sequencer Record End
+ (34): // Sequencer Stop
+ (35): // Sequencer Play
