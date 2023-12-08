@@ -81,7 +81,7 @@ float vcfcutoff[6] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
 float vcacutoff[6] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
 float vcfkeyfollow[6] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
 float envkeyfollow[6] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
-float summer = 0.0f, summer1 = 0.0f, summer2 = 0.0f, pbend = 0.0f;
+float summer = 0.0f, pbend = 0.0f;
 float modlvl = 0.0f, pwmlvl = 0.0f, pwm2lvl = 0.0f, vcflvl = 0.0f, vcfval = 0.0f;
 float vcfkflvl, envkflvl, oscmix, vcfreleaselvl = 0.000001f, vcareleaselvl = 0.000001f, resonance;
 float vcfattackrate[6], vcfdecayrate[6], vcfsustainlvl[6], vcfreleaserate[6];
