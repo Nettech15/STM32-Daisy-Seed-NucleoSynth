@@ -464,8 +464,6 @@ void SequencerRecord(uint8_t recnote, uint8_t recvelocity)
 
 void play_note(uint8_t note, uint8_t velocity)
 {
-	HAL_GPIO_WritePin(User_Led_GPIO_Port, User_Led_Pin, GPIO_PIN_SET);
-
 	if(seqmode == 1)
 	{
 		SequencerRecord((note | 0x80), velocity);
@@ -587,8 +585,6 @@ void play_note(uint8_t note, uint8_t velocity)
 
 void stop_note(uint8_t note)
 {
-	HAL_GPIO_WritePin(User_Led_GPIO_Port, User_Led_Pin, GPIO_PIN_RESET);
-
 	if(seqmode == 1)
 	{
 		SequencerRecord(note, 0);
@@ -672,8 +668,8 @@ void MakeSound(void)
 	/* Convert waveforms to floating point and apply oscillator mix */
 	for(i=0;i<6;i++)
 	{
-		channel[i] = oscmix * (-1.0f + (((float)counter[i] / (float)initmodval)));
-		channel[i] = channel[i] + ((1.0f - oscmix) * ((-1.0f + (((float)counter[i + 6] / (float)initmodval)))));
+		channel[i] = oscmix * (-1.0f + (((float)counter[i] / 1023.0f)));
+		channel[i] = channel[i] + ((1.0f - oscmix) * ((-1.0f + (((float)counter[i + 6] / 1023.0f)))));
 	}
 }
 
@@ -1406,16 +1402,6 @@ void MX_GPIO_Init(void)
   	__HAL_RCC_GPIOB_CLK_ENABLE();
   	__HAL_RCC_GPIOC_CLK_ENABLE();
   	__HAL_RCC_GPIOD_CLK_ENABLE();
-
-    /*Configure GPIO pin Output Level */
-    HAL_GPIO_WritePin(User_Led_GPIO_Port, User_Led_Pin, GPIO_PIN_RESET);
-
-    /*Configure GPIO pin : User_Led_Pin */
-    GPIO_InitStruct.Pin = User_Led_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(User_Led_GPIO_Port, &GPIO_InitStruct);
 
     /*Configure GPIO pin : Boot_Button_Pin */
     GPIO_InitStruct.Pin = Boot_Button_Pin;
